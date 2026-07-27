@@ -1,0 +1,15 @@
+services:
+  app:
+    build: .
+    container_name: exoplanet-chatbot
+    ports:
+      - "8000:8000"
+    environment:
+      - GROQ_API_KEY=${GROQ_API_KEY}
+    volumes:
+      # Persist ChromaDB so it doesn't re-embed on every container restart
+      - chroma_data:/app/chroma_db
+    restart: unless-stopped
+
+volumes:
+  chroma_data:

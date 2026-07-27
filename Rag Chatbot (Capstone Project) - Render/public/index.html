@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exoplanet Explorer AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    <div class="container">
+        <header>
+            <h1><i class="fa-solid fa-satellite-dish"></i> Exoplanet Explorer</h1>
+            <p>Your guide to the cosmos</p>
+            <div class="controls">
+                <select id="language-select">
+                    <option value="en-US">English (US)</option>
+                    <option value="es-ES">Español</option>
+                    <option value="fr-FR">Français</option>
+                    <option value="de-DE">Deutsch</option>
+                    <option value="ja-JP">日本語 (Japanese)</option>
+                    <option value="hi-IN">हिन्दी (Hindi)</option>
+                </select>
+                <button id="audio-toggle" class="icon-btn active" title="Toggle Audio Responses"><i class="fa-solid fa-volume-high"></i></button>
+            </div>
+        </header>
+
+        <main id="chat-window">
+            <div class="message bot">
+                <div class="avatar"><i class="fa-solid fa-user-astronaut"></i></div>
+                <div class="content">
+                    <p>Greetings, Earthling! I'm your Exoplanet AI. Ask me about distant worlds, Kepler discoveries, TRAPPIST-1, or anything else about exoplanetary science. I might even have a fun fact for you! You can type or use the microphone.</p>
+                </div>
+            </div>
+        </main>
+
+        <div class="input-area">
+            <button id="random-btn" class="icon-btn" title="Random Exoplanet"><i class="fa-solid fa-dice"></i></button>
+            <button id="mic-btn" class="icon-btn" title="Speak"><i class="fa-solid fa-microphone"></i></button>
+            <textarea id="chat-input" placeholder="Ask about an exoplanet..." rows="1"></textarea>
+            <button id="send-btn" class="icon-btn" title="Send"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
