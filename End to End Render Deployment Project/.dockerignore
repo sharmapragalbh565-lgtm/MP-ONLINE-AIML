@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+*.pyo
+venv/
+env/
+.venv/
+.env
+models/*.pkl
+models/*.joblib
+.git/
+*.log
+.DS_Store
+Thumbs.db

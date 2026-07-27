@@ -1,0 +1,6 @@
+image_id,detected_carnivores,carnivore_count,total_animals_detected
+bear1.jpg,"dog, bear",2,2
+cat1.jpg,cat,1,1
+cat2.jpg,cat,1,1
+dog1.jpg,dog,1,1
+dog2.jpg,dog,1,1

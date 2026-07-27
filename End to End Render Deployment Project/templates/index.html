@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Predict the resale value of any used car instantly with our AI-powered Machine Learning regression model." />
+  <title>CarLens AI – Car Value Predictor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+
+<body>
+
+  <!-- ── Noise Texture Overlay ───────────────────────────────────────── -->
+  <div class="noise-overlay"></div>
+
+  <!-- ── Background Orbs (glassmorphism depth) ─────────────────────── -->
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+
+  <!-- ── Header ─────────────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="logo">
+      <div class="logo-mark">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3" />
+          <rect x="9" y="11" width="14" height="10" rx="2" />
+          <circle cx="12" cy="21" r="1" />
+          <circle cx="20" cy="21" r="1" />
+        </svg>
+      </div>
+      <span class="logo-text">CarLens <span class="logo-accent">AI</span></span>
+    </div>
+    <p class="tagline">ML-Powered Car Value Estimator</p>
+  </header>
+
+  <!-- ── Main Card ──────────────────────────────────────────────── -->
+  <main class="container">
+    <div class="card">
+
+      <div class="card-header">
+        <h1>Estimate Your Car's Value</h1>
+        <p>Fill in the details below to get an instant AI prediction.</p>
+      </div>
+
+      <!-- ── Form ─────────────────────────────────────────────── -->
+      <form id="predict-form" novalidate>
+
+        <div class="form-grid">
+
+          <div class="form-group">
+            <div class="label-row">
+              <label for="present_price">Ex-Showroom Price</label>
+              <div class="unit-toggle" id="currency-toggle" role="group" aria-label="Currency unit">
+                <button type="button" class="unit-btn active" data-value="INR">Rs</button>
+                <button type="button" class="unit-btn" data-value="USD">USD</button>
+              </div>
+            </div>
+            <div class="input-wrapper">
+              <span class="input-icon" id="currency-icon">Rs</span>
+              <input id="present_price" name="present_price" type="number" placeholder="e.g. 8.5" step="0.01" min="0.01"
+                required />
+              <span class="unit-badge" id="price-unit-badge">Lakhs</span>
+            </div>
+            <span class="field-hint" id="price-hint">Enter amount in Lakhs (INR)</span>
+          </div>
+
+          <div class="form-group">
+            <label for="car_age">Car Age</label>
+            <div class="input-wrapper">
+              <span class="input-icon">Yr</span>
+              <input id="car_age" name="car_age" type="number" placeholder="e.g. 4" step="1" min="1" max="30"
+                required />
+              <span class="unit-badge">Years</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="label-row">
+              <label for="kms_driven" id="distance-label">Kilometres Driven</label>
+              <div class="unit-toggle" id="distance-toggle" role="group" aria-label="Distance unit">
+                <button type="button" class="unit-btn active" data-value="km">km</button>
+                <button type="button" class="unit-btn" data-value="mi">mi</button>
+              </div>
+            </div>
+            <div class="input-wrapper">
+              <span class="input-icon" id="distance-icon">Km</span>
+              <input id="kms_driven" name="kms_driven" type="number" placeholder="e.g. 45000" step="1" min="0"
+                required />
+              <span class="unit-badge" id="distance-unit-badge">km</span>
+            </div>
+            <span class="field-hint" id="distance-hint">Enter distance in kilometres</span>
+          </div>
+
+          <div class="form-group">
+            <label for="owner">Number of Previous Owners</label>
+            <div class="input-wrapper select-wrapper">
+              <select id="owner" name="owner" required>
+                <option value="" disabled selected>Select owners</option>
+                <option value="0">0 — First Owner</option>
+                <option value="1">1 — Second Owner</option>
+                <option value="2">2 — Third Owner</option>
+                <option value="3">3+ — Fourth Owner or More</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="fuel_type">Fuel Type</label>
+            <div class="input-wrapper select-wrapper">
+              <select id="fuel_type" name="fuel_type" required>
+                <option value="" disabled selected>Select fuel</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="CNG">CNG</option>
+                <option value="Electric">Electric</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="seller_type">Seller Type</label>
+            <div class="input-wrapper select-wrapper">
+              <select id="seller_type" name="seller_type" required>
+                <option value="" disabled selected>Select seller</option>
+                <option value="Dealer">Dealer</option>
+                <option value="Individual">Individual</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <label>Transmission Type</label>
+            <div class="radio-group">
+              <label class="radio-card" for="trans-manual">
+                <input type="radio" id="trans-manual" name="transmission" value="Manual" checked />
+                <span class="radio-pip"></span>
+                <span class="radio-label">Manual</span>
+              </label>
+              <label class="radio-card" for="trans-auto">
+                <input type="radio" id="trans-auto" name="transmission" value="Automatic" />
+                <span class="radio-pip"></span>
+                <span class="radio-label">Automatic</span>
+              </label>
+            </div>
+          </div>
+
+        </div><!-- /.form-grid -->
+
+        <button id="submit-btn" type="submit" class="btn-predict">
+          <span id="btn-text">Predict Market Value</span>
+          <span id="btn-spinner" class="spinner hidden"></span>
+        </button>
+
+      </form>
+
+      <!-- ── Result Panel ──────────────────────────────────────── -->
+      <div id="result-panel" class="result-panel hidden" aria-live="polite">
+        <div class="result-header">
+          <span class="result-badge">AI Estimate</span>
+          <h2>Estimated Resale Value</h2>
+        </div>
+
+        <div class="price-display">
+          <span class="currency-symbol" id="result-currency-symbol">Rs.</span>
+          <span id="predicted-price" class="price-value">0.00</span>
+          <span class="price-unit" id="result-price-unit">Lakhs</span>
+        </div>
+
+        <div class="price-range">
+          <div class="range-bar-wrapper">
+            <div id="range-bar" class="range-bar"></div>
+          </div>
+          <div class="range-labels">
+            <span>Low &nbsp;<strong id="lower-bound">—</strong> <span id="range-unit">L</span></span>
+            <span>High &nbsp;<strong id="upper-bound">—</strong> <span class="range-unit-label">L</span></span>
+          </div>
+        </div>
+
+        <p class="result-disclaimer">
+          This estimate is generated by a machine-learning model trained on synthetic market data.
+          Actual resale prices may vary based on local market conditions, vehicle condition, and negotiations.
+        </p>
+
+        <button id="reset-btn" class="btn-reset">Predict Another Car</button>
+      </div>
+
+      <!-- ── Error Panel ───────────────────────────────────────── -->
+      <div id="error-panel" class="error-panel hidden" aria-live="assertive">
+        <span class="error-label">Error</span>
+        <p id="error-message">Something went wrong. Please try again.</p>
+      </div>
+
+    </div><!-- /.card -->
+
+    <!-- ── Feature Pills ────────────────────────────────────────── -->
+    <div class="feature-pills">
+      <span class="pill">Instant Prediction</span>
+      <span class="pill">ML-Powered</span>
+      <span class="pill">Gradient Boosting</span>
+      <span class="pill">No Data Stored</span>
+    </div>
+
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <p>Built with Flask &amp; scikit-learn</p>
+  </footer>
+
+  <script src="/static/js/app.js"></script>
+</body>
+
+</html>
