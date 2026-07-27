@@ -1,5 +1,14 @@
-# Cifar-10 Image Classification using CNN
+# TensorFlow Image Classification
 
-This folder contains the project files for **Cifar-10 Image Classification using CNN**.
+A Convolutional Neural Network (CNN) for multi-class image recognition built with TensorFlow.
 
-Github: https://github.com/yashdiwan12/imag_classifier
+This project includes notebooks adapted to work with custom datasets, flexible image dimensions, and 3-channel (RGB) images. It features advanced training techniques including:
+- Training over multiple epochs
+- Early stopping
+- A deep network architecture
+
+Both TensorFlow 1.x and TensorFlow 2.x are supported, with separate notebooks and requirements files provided for each version.
+
+## Dataset
+
+This example utilizes a "cats vs. dogs" dataset for binary image classification.
