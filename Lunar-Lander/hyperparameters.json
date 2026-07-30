@@ -1,0 +1,20 @@
+{
+    "env_name": "LunarLander-v3",
+    "seed": 42,
+    "num_episodes": 1200,
+    "max_steps_per_episode": 1000,
+    "buffer_size": 100000,
+    "batch_size": 128,
+    "min_buffer_size": 1000,
+    "gamma": 0.99,
+    "learning_rate": 0.0005,
+    "hidden_dim": 128,
+    "target_update_freq": 1000,
+    "epsilon_start": 1.0,
+    "epsilon_end": 0.01,
+    "epsilon_decay": 0.995,
+    "grad_clip_norm": 10.0,
+    "print_every": 50,
+    "eval_episodes": 10,
+    "solved_reward": 200.0
+}
