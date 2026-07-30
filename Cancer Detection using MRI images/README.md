@@ -14,7 +14,7 @@ This project is an AI-based computational pathology framework designed to predic
 ### 1. Clone the Repository
 To get started, clone the repository to your local machine:
 ```bash
-git clone https://github.com/yashdiwan12/cancer_detection
+git clone https://github.com/sharmapragalbh565-lgtm/cancer_detection
 cd cancer_detection
 ```
 

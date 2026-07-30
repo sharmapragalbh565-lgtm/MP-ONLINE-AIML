@@ -26,7 +26,7 @@ To run this project locally, ensure you have Python installed. It is recommended
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yashdiwan12/Adult-Census-Income-Analysis.git
+   git clone https://github.com/sharmapragalbh565-lgtm/Adult-Census-Income-Analysis.git
    cd Adult-Census-Income-Analysis
    ```
 

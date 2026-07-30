@@ -8,9 +8,9 @@
 
 | Field | Details |
 |-------|---------|
-| **Name** | Yash Diwan |
-| **Registration Number** | 23BCE10154 |
-| **MP Online Application Number** | IN26010736 |
+| **Name** | Pragalbh Sharma |
+| **Registration Number** | 23BCE11286 |
+| **MP Online Application Number** | IN26010739 |
 | **Batch Number** | 2(B) |
 | **Faculty** | Nishant Srivastava Sir |
 
@@ -82,5 +82,5 @@ This repository documents all the AI/ML projects completed as part of the **MP O
 ---
 
 <p align="center">
-  Made with love by <strong>Yash Diwan</strong> | MP Online AI/ML Internship
+  Made with love by <strong>Pragalbh Sharma</strong> | MP Online AI/ML Internship
 </p>

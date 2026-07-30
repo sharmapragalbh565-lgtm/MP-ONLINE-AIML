@@ -113,7 +113,7 @@ rag_chatbot/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yashdiwan12/exoplaner-explorer.git
+git clone https://github.com/sharmapragalbh565-lgtm/exoplaner-explorer.git
 cd exoplaner-explorer
 
 # 2. Install dependencies

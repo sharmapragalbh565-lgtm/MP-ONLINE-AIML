@@ -79,7 +79,7 @@ CarLens/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yashdiwan12/CarLens.git
+git clone https://github.com/sharmapragalbh565-lgtm/CarLens.git
 cd CarLens
 
 # 2. Install dependencies
